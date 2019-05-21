@@ -8,8 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class GuguDan extends HttpServlet{
 
+	private Logger logger = LoggerFactory.getLogger(GuguDan.class);
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -17,12 +22,15 @@ public class GuguDan extends HttpServlet{
 		
 		PrintWriter pw = resp.getWriter();
 		
+		
+		
 		//localhost/jsp/gugudan?param=6
 		String param = req.getParameter("i");
-		System.out.println("param : " + param);
+//		System.out.println("param : " + param);
+		logger.debug("param : {}", param);
 		String param2 = req.getParameter("j");
-		System.out.println("param : " + param);
-		
+//		System.out.println("param : " + param);
+		logger.debug("param2 : {}", param2);
 		
 		pw.write("<head>");
 		pw.write("	<style>");
