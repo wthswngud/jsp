@@ -1,3 +1,4 @@
+<%@page import="java.io.IOException"%>
 <%@page import="java.io.InputStreamReader"%>
 <%@page import="java.io.InputStream"%>
 <%@page import="java.io.BufferedReader"%>
@@ -22,17 +23,32 @@
 	out.write("application.getMinorVersion() : " + application.getMinorVersion() + "<br>");
 	out.write("application.getInitParameter(\"ADMIN\") : " + application.getInitParameter("ADMIN") + "<br>");
 	
-	out.write("application.getRealPath(\"/res/190522.txt\") : " + application.getRealPath("/res/190522.txt"));
+	out.write("application.getRealPath(\"/res/190522.txt\") : " + application.getRealPath("/res/190522.txt")+"<br>");
 	
-	File file = new File("C:/Users/PC19/Desktop/jspSpring/190522.txt");
-	FileInputStream fin = new FileInputStream(file);
-	InputStreamReader isr = new InputStreamReader(fin, "utf-8");
-// 	StringReader sr = new StringReader(fi);
-
-
-	
-	FileOutputStream fout = new FileOutputStream(file);
-	
+	BufferedReader br = null;
+	try{
+		File file = new File("C:/Users/PC19/Desktop/jspSpring/190522.txt");
+		FileInputStream fin = new FileInputStream(file);
+		InputStreamReader isr = new InputStreamReader(fin, "utf-8");
+		br = new BufferedReader(isr);
+		
+		char[] buff = new char[512];
+		int len = -1;
+		
+		while((len = br.read(buff)) != -1){
+			out.write(buff);
+		}
+	}catch(IOException e){
+		e.printStackTrace();
+	}finally{
+		if(br != null){
+			try{
+				br.close();
+			}catch(IOException e){
+				e.printStackTrace();
+			}
+		}
+	}
 %>
 </body>
 </html>
