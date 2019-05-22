@@ -7,10 +7,12 @@
 <title>Insert title here</title>
 <style>
 	div{
-		margin : 0px;
+		margin : 0px auto;
+		padding-top : 50px;
 		width : 200px;
 		height: 250px;
 		border : 1px solid red;
+		text-align: center;
 	}
 </style>
 </head>
