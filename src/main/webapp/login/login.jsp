@@ -25,7 +25,7 @@
 
     <div class="container">
 
-      <form action = "<%=request.getContextPath()%>/login/loginProcess.jsp"
+      <form action = "<%=request.getContextPath()%>/login"
       		class="form-signin"
       		method = "post">
         <h2 class="form-signin-heading">Please sign in</h2>
