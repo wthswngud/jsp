@@ -1,0 +1,10 @@
+1. localhost/jsp/jsp/redirectStart.jsp 접속 
+1-1.redirect 버튼 클릭 ( jsp/jsp/redirectProcess.jsp) : 최초요청
+
+2.redirectProcess.jsp가 최초요청을 수신
+2-1. reponse.sendRedirect("/jsp/jsp/redirectTarget.jsp) : 클라이언트에게 리다이렉트 지시
+														  
+3.웹브라우저가 리다이렉트 응답을 받고, 
+  수신한 리다이렉트 주소("jsp/jsp/redirectTart.get")를 
+  웹브라우저 주소줄에 입력하여
+  두번째 요청을 보낸다
