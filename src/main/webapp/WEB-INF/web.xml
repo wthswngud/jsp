@@ -9,34 +9,28 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
-  	<servlet-class>kr.or.ddit.servlet.BasicServlet</servlet-class>
-  	<servlet-name>basicServlet</servlet-name>
+    <servlet-name>basicServlet</servlet-name>
+    <servlet-class>kr.or.ddit.servlet.BasicServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>basicServlet</servlet-name>
-  	<url-pattern>/bs</url-pattern>
+    <servlet-name>basicServlet</servlet-name>
+    <url-pattern>/bs</url-pattern>
   </servlet-mapping>
-  
   <servlet>
-  	<servlet-class>kr.or.ddit.servlet.NowDateServlet</servlet-class>
-  	<servlet-name>NowDateServlet</servlet-name>
+    <servlet-name>NowDateServlet</servlet-name>
+    <servlet-class>kr.or.ddit.servlet.NowDateServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>NowDateServlet</servlet-name>
-  	<url-pattern>/nowDate</url-pattern>
+    <servlet-name>NowDateServlet</servlet-name>
+    <url-pattern>/nowDate</url-pattern>
   </servlet-mapping>
-  
   <servlet>
-  	<servlet-class>kr.or.ddit.servlet.GuguDan</servlet-class>
-  	<servlet-name>GuguDan</servlet-name>
+    <servlet-name>GuguDan</servlet-name>
+    <servlet-class>kr.or.ddit.servlet.GuguDan</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>GuguDan</servlet-name>
-  	<url-pattern>/gugudan</url-pattern>
+    <servlet-name>GuguDan</servlet-name>
+    <url-pattern>/gugudan</url-pattern>
   </servlet-mapping>
 </web-app>
