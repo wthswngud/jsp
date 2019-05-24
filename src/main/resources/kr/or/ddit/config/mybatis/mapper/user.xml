@@ -7,4 +7,11 @@
     SELECT 	* 
     FROM 	users
   </select>
+  
+  <select id="getUser" parameterType="String" resultType="userVO">
+  	SELECT *
+  	FROM	users
+  	WHERE	USERID = #{userId}
+  	ORDER BY USERID
+  </select>
 </mapper>

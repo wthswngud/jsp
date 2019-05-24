@@ -1,12 +1,17 @@
 package kr.or.ddit.user.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import kr.or.ddit.user.dao.IuserDao;
+import kr.or.ddit.user.dao.UserDaoImpl;
 import kr.or.ddit.user.model.UserVO;
 
 public class UserServiceImpl implements IuserService{
-
+	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	private IuserDao userDao = new UserDaoImpl();
 	
 	/**
 	 * Method : userList
@@ -18,17 +23,11 @@ public class UserServiceImpl implements IuserService{
 	 */
 	@Override
 	public List<UserVO> userList() {
-		
-		//db에서 데이터를 조회했다고 가정
-		List<UserVO> userList = new ArrayList<UserVO>();
-		
-		//데이터 집어넣기 - 브라운, 샐리, 제임스
-		userList.add(new UserVO("브라운", "brown", "곰"));
-		userList.add(new UserVO("코니", "cony", "토끼"));
-		userList.add(new UserVO("샐리", "sally", "병아리"));
-		userList.add(new UserVO("제임스", "james", "사람"));
-		userList.add(new UserVO("문", "moon", "달"));
-				
-		return userList;
+		return userDao.userList();
+	}
+
+	@Override
+	public UserVO getUser(String userId) {
+		return userDao.getUser(userId);
 	}
 }
