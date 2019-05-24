@@ -40,7 +40,7 @@ public class UserVO {
 	
 	@Override
 	public String toString() {
-		return "UserVO [name=" + name + ", userId=" + userId + ", alias="
-				+ alias + "]";
+		return "\nUserVO [이름=" + name + ", 유저ID=" + userId + ", 별명="
+				+ alias + "]\n";
 	}
 }
