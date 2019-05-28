@@ -135,6 +135,7 @@
         <div class="checkbox">
           <label>
             <input id = "rememberme" name = "rememberme" type="checkbox" value="remember-me"> Remember me
+            
           </label>
         </div>
         <button id = "signinBtn" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
