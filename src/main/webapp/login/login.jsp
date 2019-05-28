@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<!-- 500에러 발생시 대체하는 에러 페이지로 이동하기 위한 코드 -->
+<%-- <% Integer.parseInt("asdfasdf");%> --%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
