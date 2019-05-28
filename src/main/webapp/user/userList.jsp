@@ -1,3 +1,4 @@
+<%@page import="kr.or.ddit.paging.model.PageVO"%>
 <%@page import="kr.or.ddit.user.model.UserVO"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -40,26 +41,37 @@
 									<th>등록일시</th>
 								</tr>
 								<%
+// 									List<UserVO> userList = (List<UserVO>)request.getAttribute("userList");
+								
+// 									PagingList 20190519
 									List<UserVO> userList = (List<UserVO>)request.getAttribute("userList");
 									for(int i=0; i<userList.size(); i++){
-									UserVO userVO = userList.get(i);%>
+// 									UserVO userVO = userList.get(i);
+								%>
 								<tr>
-									<td><%=userVO.getUserId()%></td>
-									<td><%=userVO.getName()%></td>
-									<td><%=userVO.getAlias()%></td>
+									<td><%=userList.get(i).getUserId()%></td>
+									<td><%=userList.get(i).getName()%></td>
+									<td><%=userList.get(i).getAlias()%></td>
 									<td></td>
 								</tr>
 									<%}%>
 							</table>
 						</div>
+						
 						<a class="btn btn-default pull-right">사용자 등록</a>
-						<div class="text-center">
+						<!-- 사용자 수 : 105건
+								 페이지네이션 : 11건 
+							-->
+							<div class="text-center">
 							<ul class="pagination">
-								<li><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
+							
+<!-- // 										// 내가 현재 몇번째 페이지에 있는가? -->
+<!-- // 										PageVO pageVo = (PageVO)request.getAttribute("pageVo"); -->
+<!-- // 										int paginationSize = (int)request.getAttribute("paginationSize"); -->
+<%-- 										for(int i=1; i<= paginationSize; i++){%> --%>
+<%-- 											<li><a href="<%=request.getContextPath()%>/userPagingList?page=<%=i%>&pageSize=<%=pageVo.getPageSize()%>"></a></li> --%>
+<%-- 										<%} --%>
+<%-- 									%> --%>
 							</ul>
 						</div>
 					</div>

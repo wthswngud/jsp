@@ -85,11 +85,43 @@ public class UserDaoImplTest {
 		logger.debug("uservo : {}", userVO.getName());
 	}
 	
-	//사용자 페이징 리스트 조회
-	//*****고려사항*****
-	//몇번째 페이지 조회인지?, 페이징 몇건씩 데이터를 보여줄건지 : 쿼리 실행 파라미터
-	//정렬 순서? : 로직 --> 파라미터화 시킬 수 있다.
-	// --> 사용자 아이디 순으로 정렬
+//	//사용자 페이징 리스트 조회
+//	//*****고려사항*****
+//	//몇번째 페이지 조회인지?, 페이징 몇건씩 데이터를 보여줄건지 : 쿼리 실행 파라미터
+//	//정렬 순서? : 로직 --> 파라미터화 시킬 수 있다.
+//	// --> 사용자 아이디 순으로 정렬
+//	
+//	@Test
+//	public void userPagingListTest(){
+//		/***Given***/
+//		PageVo pageVo = new PageVo("", "");
+//
+//		/***When***/
+//
+//		/***Then***/
+//
+//	}
 	
-	
+	/**
+	* Method : usersCntTest
+	* 작성자 : PC19
+	* 변경이력 :
+	* Method 설명 : 사용자 전체수 조회 테스트
+	*/
+	@Test
+	public void usersCntTest(){
+		/***Given***/
+
+		/***When***/
+		int usersCnt = userDao.usersCount();
+
+		/***Then***/
+		assertEquals(105, usersCnt);
+
+	}
 }
+
+
+
+
+

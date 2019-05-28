@@ -14,4 +14,63 @@
   	WHERE	USERID = #{userId}
   	ORDER BY USERID
   </select>
+  
+  	<!-- 사용자 페이지 리스트 조회 -->
+	<!-- pageVo int page, int pageSize -->
+  <select id = "userPagingList" parameterType="pageVo" resultType="userVO">
+  	<![CDATA[
+  	SELECT *
+	FROM
+	(
+		SELECT a.*, rownum rn
+	 	FROM 
+		(
+			SELECT a.*
+			 FROM USERS a
+			 ORDER BY USERID)
+		a)
+		
+	WHERE rn >= (#{page}-1)*#{pageSize} +1 and rn<= #{page}*#{pageSize}
+	]]>
+<!-- 	WHERE rn &gt;= 1 AND  rn &lt;= 10 ; -->
+  </select>
+
+
+	<!-- 사용자 전체수 조회 -->
+	<select id = "usersCount" resultType="int">
+ 		SELECT  COUNT(*)
+		FROM    USERS
+	</select>
+	
+	
+	
+	
+	<select id = "getPageLprod" parameterType="pageVo" resultType="lprodVO">
+	 	<![CDATA[
+	 	SELECT *
+		FROM
+		(
+			SELECT a.*, rownum rn
+		 	FROM 
+			(
+				 SELECT a.*
+				 FROM LPROD a
+				 ORDER BY LPROD_ID)
+			a)
+			
+		WHERE RN >= (#{page}-1)*#{pageSize} +1 AND RN<= #{page}*#{pageSize}
+		]]>
+	<!-- 	WHERE rn &gt;= 1 AND  rn &lt;= 10 ; -->
+	</select>
+	
+	<select id="getLprod" resultType="lprodVO">
+		SELECT	*
+		FROM	LPROD
+	</select>
+	
+	<!-- lprod의 전체 수를 조회 -->
+	<select id="getLprodCnt" resultType="int">
+		SELECT	COUNT(*)
+		FROM	LPROD
+	</select>
 </mapper>
