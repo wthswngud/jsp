@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -66,6 +67,14 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		logger.debug("parameter userId : {}" + request.getParameter("userId"));
 		logger.debug("parameter userPW : {}" + request.getParameter("userPW"));
+		logger.debug("parameter rememberme: {}", request.getParameter("rememberme"));
+		
+		
+		for(Cookie cookie : request.getCookies()){
+			logger.debug("cookie : {}, {}", cookie.getName(), cookie.getValue());
+		}
+		
+		
 		
 		//사용자 파라미터 userId, password
 		String userId = request.getParameter("userId");
@@ -78,6 +87,36 @@ public class LoginController extends HttpServlet {
 		
 		//일치하면...(로그인 성공) ==> main화면으로 이동
 		if(userId.equals("brown") && userPW.equals("brown1234")){
+			
+			//remember 파라미터가 존재할 경우 userId, rememberme cookie 설정한다.
+			//remember 파라미터가 존재하지 않을 경우 userId, rememberme cookie 삭제한다.
+			int cookieMaxAge = 0;
+			if(request.getParameter("rememberme") != null)
+//			{
+				cookieMaxAge = 60*60*24*30;
+				
+				/*
+				Cookie userIdCookie = new Cookie("userId", userId);
+				userIdCookie.setMaxAge(60*60*24*30);
+				
+				Cookie rememberMeCookie = new Cookie("rememberme", "true");
+				rememberMeCookie.setMaxAge(60*60*24*30);
+				
+				response.addCookie(userIdCookie);
+				response.addCookie(rememberMeCookie);
+				*/
+				
+//			}else{
+				Cookie userIdCookie = new Cookie("userId", userId);
+				userIdCookie.setMaxAge(cookieMaxAge);
+				
+				Cookie rememberMeCookie = new Cookie("rememberme", "true");
+				rememberMeCookie.setMaxAge(cookieMaxAge);
+				
+				response.addCookie(userIdCookie);
+				response.addCookie(rememberMeCookie);
+//			}
+			
 			//session에 사용자 정보를 넣어준다(사용빈도가 높기 때문에)
 			HttpSession session =  request.getSession();
 			session.setAttribute("USER_INFO", new UserVO("브라운", "brown", "곰"));
