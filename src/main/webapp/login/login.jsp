@@ -23,7 +23,7 @@
     <link href="<%=request.getContextPath()%>/css/signin.css" rel="stylesheet">
 	<!-- 수업시간에 한거 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    
+    <script src = "<%=request.getContextPath()%>/js/js.cookie.js"></script>
 	<script>
 		$(document).ready(function(){
 			// 문서로딩이 완료되고 나서 실행되는 부분
@@ -38,26 +38,28 @@
 				//사용자 아이디 값을 userId 쿠키로 저장
 				//true 값을 rememberme cookie 값으로 저장
 				if($("#rememberme").is(":checked")){
-					setCookie("userId", $("#userId").val(), 30);
-					setCookie("rememberme", "true", 30);
+					setCookie("userId", $("#userId").val(), {expires : 30});
+					setCookie("rememberme", "true", {expires : 30});
 				}
 				
 				//만약 rememberme 체크박스가 해체되어 있는 경우
 				//	userId, rememberme cookie 값을 삭제
 				else{
-					deleteCookie("userId");
-					deleteCookie("rememberme");
+					Cookies.remove("userId");
+					Cookies.remove("rememberme");
 				}
 				
 				//로그인 요청을 서버로 전송
 				$("#frm").submit();
 			})
 			
-			var rememberme = getCookie("rememberme");
+			var rememberme = Cookies.get("rememberme");	
+			//getCookie("rememberme")
+			
 			if(rememberme == "true"){
 // 				$("#rememberme").attr("checked", true);
 				$("#rememberme").prop("checked", true);
-				$("#userId").val(getCookie("userid"));
+				$("#userId").val(Cookies.get("userId"));
 				$("#userPW").focus();
 				
 				//signin Button 클릭시 실행되는 핸들러
