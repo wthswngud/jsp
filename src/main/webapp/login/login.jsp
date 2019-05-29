@@ -17,13 +17,13 @@
     <title>Signin Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<%=request.getContextPath()%>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="<%=request.getContextPath()%>/css/signin.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/signin.css" rel="stylesheet">
 	<!-- 수업시간에 한거 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src = "<%=request.getContextPath()%>/js/js.cookie.js"></script>
+    <script src = "${pageContext.request.contextPath}/js/js.cookie.js"></script>
 	<script>
 		$(document).ready(function(){
 			// 문서로딩이 완료되고 나서 실행되는 부분
@@ -53,7 +53,7 @@
 				$("#frm").submit();
 			})
 			
-			var rememberme = Cookies.get("rememberme");	
+			var rememberme = Cookies.get("rememberme");
 			//getCookie("rememberme")
 			
 			if(rememberme == "true"){
@@ -121,14 +121,14 @@
   <body>
 
     <div class="container">
-
-      <form id = "frm" action = "<%=request.getContextPath()%>/login"
+										
+      <form id = "frm" action = "${pageContext.request.contextPath}/login"
       		class="form-signin"
       		method = "post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="userId" class="sr-only">userId</label>
         
-        <input type="text" id ="userId" name ="userId" class="form-control" placeholder="Email address" required>
+        <input type="text" id ="userId" name ="userId" class="form-control" placeholder="Email address" required value="${param.userId}">
         
         <label for="inputPassword"  class="sr-only">Password</label>
         <input type="password" id="userPW" name="userPW" value = "brown1234" class="form-control" placeholder="Password" required>

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="<%=request.getContextPath()%>/sumCalculation" method = "get">
+	<form action="${pageContext.request.contextPath}/sumCalculation" method = "get">
 		<input type="text" name="start" value = "1">
 		<input type = "text" name = "end" value = 10>
 		<button>submit</button>

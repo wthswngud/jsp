@@ -37,6 +37,7 @@ public class Calculator {
 		return result;
 	}
 	
+	
 	public int calculateSum(String[] numberStrings){
 		int result = 0;
 		for(String numberString : numberStrings){

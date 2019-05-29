@@ -49,12 +49,4 @@
     <exception-type>java.lang.NumberFormatException</exception-type>
     <location>/WEB-INF/error/numberFormat.jsp</location>
   </error-page>
-  
-	<!-- 2019.05.29 -->
-<!--   <resource-ref> -->
-<!--     <description>DB Connection</description> -->
-<!--     <res-ref-name>jdbc/oracleDB</res-ref-name> -->
-<!--     <res-type>javax.sql.DataSource</res-type> -->
-<!--     <res-auth>Container</res-auth> -->
-<!--   </resource-ref> -->
 </web-app>

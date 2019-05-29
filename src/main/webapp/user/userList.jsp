@@ -3,6 +3,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +36,7 @@
 						<div class="table-responsive">
 							<table class="table table-striped">
 								<tr>
-									<th>사용자 아이디</th>
+									<th>사용자 아이디(el)</th>
 									<th>사용자 이름</th>
 									<th>사용자 별명</th>
 									<th>등록일시</th>
@@ -44,17 +45,20 @@
 // 									List<UserVO> userList = (List<UserVO>)request.getAttribute("userList");
 								
 // 									PagingList 20190519
-									List<UserVO> userList = (List<UserVO>)request.getAttribute("userList");
-									for(int i=0; i<userList.size(); i++){
-// 									UserVO userVO = userList.get(i);
-								%>
-								<tr>
-									<td><%=userList.get(i).getUserId()%></td>
-									<td><%=userList.get(i).getName()%></td>
-									<td><%=userList.get(i).getAlias()%></td>
-									<td></td>
-								</tr>
-									<%}%>
+									// ${userList}
+									// List<UserVO> userList = (List<UserVO>)request.getAttribute("userList");
+								%>	
+								
+								<!-- userList의 데이터를 한건 조회해서
+									 pageContext.setAttribute("user", vo); -->
+								<c:forEach items="${userList}" var="user">
+									<tr>
+										<td>${user.userId}</td>
+										<td>${user.name}</td>
+										<td>${user.alias}</td>
+										<td></td>
+									</tr>
+								</c:forEach>
 							</table>
 						</div>
 						
@@ -69,7 +73,7 @@
 <!-- // 										PageVO pageVo = (PageVO)request.getAttribute("pageVo"); -->
 <!-- // 										int paginationSize = (int)request.getAttribute("paginationSize"); -->
 <%-- 										for(int i=1; i<= paginationSize; i++){%> --%>
-<%-- 											<li><a href="<%=request.getContextPath()%>/userPagingList?page=<%=i%>&pageSize=<%=pageVo.getPageSize()%>"></a></li> --%>
+<%-- 											<li><a href="${pageContext.request.contextPath}
 <%-- 										<%} --%>
 <%-- 									%> --%>
 							</ul>

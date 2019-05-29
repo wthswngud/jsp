@@ -20,12 +20,12 @@
 		request.getRemoteAddr() : <%= request.getRemoteAddr() %><br>
 		request.getLocalAddr() : <%= request.getLocalAddr() %><br>
 		request.getContentType() : <%= request.getContentType() %><br>
-		request.getContextPath() : <%= request.getContextPath() %><br>
+		request.getContextPath() : ${pageContext.request.contextPath}<br>
 		request.getMethod() : <%= request.getMethod() %><br>
 		request.getRequestURI() : <%= request.getRequestURI() %><br><%--!! --%>
 		request.getProtocol() :  <%=request.getProtocol() %><br>
 		
-		<img src="<%=request.getContextPath() %>/image/ryan.png">
+		<img src="${pageContext.request.contextPath}/image/ryan.png">
 		
 		<!--파라미터 받기 -->
 		request.getParameter("rangersName") : <%=request.getParameter("rangersName") %>	<br>

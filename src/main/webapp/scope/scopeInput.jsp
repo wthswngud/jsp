@@ -17,7 +17,7 @@
 	
 	<fieldset>
 		<legend>scope 속성 테스트</legend>
-		<form action="<%=request.getContextPath()%>/scope/scopeReceive.jsp" method = "post">
+		<form action="${pageContext.request.contextPath}/scope/scopeReceive.jsp" method = "post">
 			page	<input type = "text" name = "pageParam" value = "pageValue"/><br>
 			request <input type = "text" name = "requestParam" value = "requestValue"/><br>
 			session <input type = "text" name = "sessionParam" value = "sessionValue"/><br>

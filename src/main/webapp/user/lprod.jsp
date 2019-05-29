@@ -48,7 +48,7 @@
 										if(pageVO.getPage()==i){%>
 										<li class = active><span><%=i%></span></li>
 									<%	}else{%>
-										<li><a href = "<%=request.getContextPath()%>/userLprodList?page=<%=i%>&pageSize=<%=pageVO.getPageSize()%>"><%=i%></a></li>
+										<li><a href = "${pageContext.request.contextPath}/userLprodList?page=<%=i%>&pageSize=<%=pageVO.getPageSize()%>"><%=i%></a></li>
 										<%}
 									}%>
 									<li><span>»</span></li>
