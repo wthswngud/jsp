@@ -58,7 +58,7 @@
 		<groupId>com.oracle</groupId>
 		<artifactId>ojdbc6</artifactId>
 		<version>12.1.0.2</version>
-<!-- 		<scope>provided</scope> -->
+		<scope>provided</scope>
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/junit/junit -->
