@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import kr.or.ddit.paging.model.PageVO;
-import kr.or.ddit.user.model.LprodVO;
 import kr.or.ddit.user.model.UserVO;
 
 public interface IuserService {
