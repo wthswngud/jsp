@@ -3,6 +3,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,7 @@
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<div class="row">
 					<div class="col-sm-8 blog-main">
-						<h2 class="sub-header">사용자</h2>
+						<h2 class="sub-header">Lprod</h2>
 						<div class="table-responsive">
 							<table class="table table-striped">
 								<tr>
@@ -40,25 +41,37 @@
 									</tr>
 								<%}%>
 							</table>
+							
+							<c:set var="pageVo" value="pageVo"/>
+							
 							<div class = "text-center">
 								<ul class = "pagination">
-									<li><span>«</span></li>
-									<%
-									for(int i=1; i<=pagenation; i++){ 
+									<c:if test="${pageVO.getPage()==1}">
+										<li class=disabled><span>«</span></li>
+									</c:if>
+									<c:if test="${pageVO.getPage()!=1}">
+										<li><a href = "${pageContext.request.contextPath}/userLprodList?page=<%=pageVO.getPage()-1%>&pageSize=<%=pageVO.getPageSize()%>"><span>«</span></a></li>
+									</c:if>
+									<%for(int i=1; i<=pagenation; i++){ 
 										if(pageVO.getPage()==i){%>
 										<li class = active><span><%=i%></span></li>
 									<%	}else{%>
 										<li><a href = "${pageContext.request.contextPath}/userLprodList?page=<%=i%>&pageSize=<%=pageVO.getPageSize()%>"><%=i%></a></li>
 										<%}
 									}%>
-									<li><span>»</span></li>
+									<c:if test="${pageVO.page==pagenation}">
+										<li class=disabled><span>»</span></li>
+									</c:if>
+									<c:if test="${pageVO.page!=pagenation}">
+										<li><a href = "${pageContext.request.contextPath}/userLprodList?page=${pageVO.page+1}&pageSize=${pageVO.pageSize}"><span>»</span></a></li>
+									</c:if>
 								</ul>
 							</div>
-						</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 </body>
 </html>
