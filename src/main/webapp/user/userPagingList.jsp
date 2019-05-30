@@ -18,15 +18,10 @@
 			<!-- left -->
 			<%@include file="/common/left.jsp" %>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<div class="blog-header">
-					<h1 class="blog-title">Main</h1>
-					<p class="lead blog-description">Jsp / Spring.</p>
-				</div>
 				<div class="row">
 					<div class="col-sm-8 blog-main">
 						<div class="blog-post">
-							<h2 class="blog-post-title">JSP</h2>
-							<p class="blog-post-meta">2017.10.30, room 201</p>
+							<h2 class="blog-post-title">사용자 페이징 리스트</h2>
 							
 							<table class="table table-striped">
 								<tr>
@@ -34,9 +29,9 @@
 									<th>유저 이름</th>
 									<th>별명</th>
 								</tr>
-								<c:forEach items="${userList}" var="user">
+								<c:forEach items="${userList}" var="user" varStatus="status">
 									<tr>
-										<td>${user.userId}</td>
+										<td>${status.index}/${status.count} / ${user.userId}</td>
 										<td>${user.name}</td>
 										<td>${user.alias}</td>
 									</tr>
@@ -50,30 +45,39 @@
 							-->
 							<div class="text-center">
 								<ul class="pagination">
-									<%
-									PageVO pageVo = (PageVO)request.getAttribute("pageVo");
-									int paginationSize = (Integer)request.getAttribute("paginationSize");
-									if(pageVo.getPage() == 1){%>
+								
+									<c:set var="pageVo" value="${pageVo}" scope="request"/>
+										
+										
+										
+									<c:if test= "${pageVo.page==1}">
 										<li class="disabled"><span>«</span></li>
-									<%}else{%>
-										<%int pn = pageVo.getPage()-1; %>
-										<li><a href = "${pageContext.request.contextPath}/userPagingList?page=<%=pn%>&pageSize=<%=pageVo.getPageSize()%>"><span>«</span></a></li>
-									<%} %>
-									<%for(int i=1; i<= paginationSize; i++){%>
-										<%if(pageVo.getPage() == i){%>
-											<li class = active><span><%=i%></span></li>
-										<%}
-										if(pageVo.getPage() != i){%>
-											<li><a href="${pageContext.request.contextPath}/userPagingList?page=<%=i%>&pageSize=<%=pageVo.getPageSize()%>"><%=i%></a></li>
-										<%} %>
-									<%}
+									</c:if>
+									<c:if test="${pageVo.page!=1 }">
+										<li><a href = "${pageContext.request.contextPath}/userPagingList?page=${requestScope.pageVo.page-1}&pageSize=${requestScope.pageVo.pageSize}"><span>«</span></a></li>
+									</c:if>
+
+
+
+									<c:forEach begin="1" end="${paginationSize}" step="1" var="i" varStatus="String">
+										<c:if test="${pageVo.page==i}">
+											<li class = active><span>${i}</span></li>
+										</c:if>
+										<c:if test="${pageVo.page!=i}">
+											<li><a href="${pageContext.request.contextPath}/userPagingList?page=${i}&pageSize=${pageVo.pageSize}">${i}</a></li>
+										</c:if>
+									</c:forEach>
 									
-									if(pageVo.getPage() == paginationSize){%>
-										<li class = "disabled"><span>»</span></li>
-									<%}else{%>
-										<% int pn = pageVo.getPage()+1; %>
-										<li><a href = "${pageContext.request.contextPath}/userPagingList?page=<%=pn%>&pageSize=<%=pageVo.getPageSize()%>"><span>»</span></li>
-									<%} %>
+									
+									
+									<c:choose>
+										<c:when test="${pageVo.page == paginationSize}">
+											<li class = "disabled"><span>»</span></li>
+										</c:when>
+										<c:otherwise>
+											<li><a href = "${pageContext.request.contextPath}/userPagingList?page=${pageVo.page+1}&pageSize=${pageVo.pageSize}"><span>»</span></a></li>
+										</c:otherwise>
+									</c:choose>
 								</ul>
 							</div>
 						</div>

@@ -131,7 +131,7 @@
         <input type="text" id ="userId" name ="userId" class="form-control" placeholder="Email address" required value="${param.userId}">
         
         <label for="inputPassword"  class="sr-only">Password</label>
-        <input type="password" id="userPW" name="userPW" value = "brown1234" class="form-control" placeholder="Password" required>
+        <input type="password" id="userPW" name="userPW" value = "" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
             <input id = "rememberme" name = "rememberme" type="checkbox" value="remember-me"> Remember me
