@@ -46,18 +46,11 @@
 		request.setAttribute("code", "03");
 	%>
 	<c:choose>
-		<c:when test = "${code=='01'}"><!-- ==, eq -->
-			code is '01'
-		</c:when>
-		<c:when test = "${code=='02'}">
-			code is '02'
-		</c:when>
-		<c:when test = "${code=='03'}">
-			code is '03'
-		</c:when>
-		<c:otherwise>
-			code is ${code}
-		</c:otherwise>
+		<!-- ==, eq -->
+		<c:when test = "${code=='01'}">code is '01'</c:when>
+		<c:when test = "${code=='02'}">code is '02'</c:when>
+		<c:when test = "${code=='03'}">code is '03'</c:when>
+		<c:otherwise>code is ${code}</c:otherwise>
 	</c:choose>
 	
 	<h2>el 연산</h2>
