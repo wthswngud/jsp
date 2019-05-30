@@ -30,6 +30,16 @@
 									<th>Lprod_NM</th>
 									<th>Lprod_gu</th>
 								</tr>
+								
+<%-- 								<c:forEach begin="1" end="${pageList.size()}" step="1" var="i"> --%>
+<%-- 									<c:set var="pageVO" value="${pageList.get(i)}"/> --%>
+<!-- 									<tr> -->
+<%-- 										<td>${pageVO.lprod_id}</td> --%>
+<%-- 										<td>${pageVO.lprod_nm}</td> --%>
+<%-- 										<td>${pageVO.lprod_gu}</td> --%>
+<!-- 									</tr> -->
+<%-- 								</c:forEach> --%>
+								
 								<%List<LprodVO> list = (List<LprodVO>)request.getAttribute("pageList");
 								PageVO pageVO = (PageVO)request.getAttribute("pageVO");
 								int pagenation = (Integer)request.getAttribute("pagenation");
