@@ -3,6 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<settings>
+        <setting name="cacheEnabled" value="false" />
+        <setting name="jdbcTypeForNull" value="NULL" />
+    </settings>
+
 	<!-- 이부분 추가 -->
 	<typeAliases>
 		<typeAlias  alias="userVO" type="kr.or.ddit.user.model.UserVO"/>

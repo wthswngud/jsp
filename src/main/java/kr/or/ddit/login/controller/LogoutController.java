@@ -17,10 +17,10 @@ public class LogoutController extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		if(session.getAttribute("USER_INFO") == null){
-			request.getRequestDispatcher("/login").forward(request, response);;
+			request.getRequestDispatcher("/login").forward(request, response);
 		}else{
 			session.invalidate(); // session안에 있는 모든 정보를 삭제 하는 메서드
-			request.getRequestDispatcher("/login").forward(request, response);;
+			request.getRequestDispatcher("/login").forward(request, response);
 		}
 	}
 }

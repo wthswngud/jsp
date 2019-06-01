@@ -21,7 +21,7 @@
 		$(".userTr").on("click", function(){
 			console.log("userTr click");
 			//userId를 획득하는 방법
-			//$(this).find(".userId").test();
+			//$(this).find(".userId").text();
 			//$(this).data("userid");
 			
 			//사용자 아이디를 #userId 값으로 설정해주고
@@ -66,7 +66,7 @@
 							</c:forEach>
 						</table>
 
-						<a class="btn btn-default pull-right">사용자 등록</a>
+						<a href="${pageContext.request.contextPath}/userForm" class="btn btn-default pull-right">사용자 등록</a>
 
 						<!-- 사용자 수 : 105건
 								 페이지네이션 : 11건 

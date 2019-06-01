@@ -2,6 +2,9 @@ package kr.or.ddit.user.service;
 
 import static org.junit.Assert.*;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 
@@ -78,5 +81,62 @@ public class UserServiceImplTest {
 		/***Then***/
 		assertEquals(11, (int)paginationSize);
 
+	}
+	
+	/**
+	* Method : insertUserTest
+	* 작성자 : PC19
+	* 변경이력 :
+	* @throws ParseException
+	* Method 설명 : 사용자 등록
+	*/
+	@Test
+	public void insertUserTest() throws ParseException{
+		/***Given***/
+		//사용자 정보를 담고 있는 vo객체 준비
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		UserVO userVo = new UserVO("userTest", "대덕인", "중앙로", "userTest1234",
+                "대전광역시 중구 중앙로76", "영민빌딩", "", "", "34940", (Date) sdf.parse("2019-05-31"));
+		
+		/***When***/
+		int insertCnt = userService.insertUser(userVo);
+
+		
+		/***Then***/
+		assertEquals(1, insertCnt);
+	}
+	
+	/**
+	* Method : deleteUserTest
+	* 작성자 : PC19
+	* 변경이력 :
+	* Method 설명 :사용자 삭제
+	*/
+	@Test
+	public void deleteUserTest(){
+		/***Given***/
+		
+
+		/***When***/
+		int result = userService.deleteUser("userTest");
+
+		/***Then***/
+		assertEquals(1, result);
+	}
+	
+	@Test
+	public void modiUserTest() throws ParseException{
+		/***Given***/
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		UserVO userVo = new UserVO("userTest", "브라움", "중앙로", "userTest1234",
+                "대전광역시 중구 중앙로76", "영민빌딩", "", "", "34940", (Date) sdf.parse("2019-05-31"));
+
+		/***When***/
+		int result = userService.modiUser(userVo);
+		
+		/***Then***/
+		assertEquals(1, result);
 	}
 }

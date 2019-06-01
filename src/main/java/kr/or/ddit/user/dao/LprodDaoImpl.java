@@ -5,6 +5,7 @@ import java.util.List;
 import kr.or.ddit.mybatis.MyBatisUtil;
 import kr.or.ddit.paging.model.PageVO;
 import kr.or.ddit.user.model.LprodVO;
+import kr.or.ddit.user.model.UserVO;
 
 import org.apache.ibatis.session.SqlSession;
 

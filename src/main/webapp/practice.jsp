@@ -18,23 +18,38 @@
 </head>
 <body>
 	<table>
-		${param.dan}
 		<c:choose>
 			<c:when test="${param.dan==null}">
-				<c:set var="param.dan" value="1"/>
+				<c:set var="dan" value="9"/>
 			</c:when>
+			<c:otherwise>
+				<c:set var="dan" value="${param.dan}"/>
+			</c:otherwise>
+		</c:choose>
+		<c:choose>
 			<c:when test="${param.gob==null}">
-				<c:set var="param.gob" value="9"/>
+				<c:set var="gob" value="9"/>
 			</c:when>
+			<c:otherwise>
+				<c:set var="gob" value="${param.gob}"/>
+			</c:otherwise>
 		</c:choose>
 		
-		<c:forEach begin="1" end="${param.dan == null ? 9}" step="1" var="i">
+		<c:forEach begin="1" end="${gob}" step="1" var="i">
 			<tr>
-				<c:forEach begin="2" end="${param.gob}" var="j" step="1">
+				<c:forEach begin="2" end="${dan}" var="j" step="1">
 					<td>${j}*${i} = ${j*i}</td>
 				</c:forEach>
 			</tr>
 		</c:forEach>
+		
+<%-- 		<c:forEach begin="1" end="${param.gob == null ? 9 : param.gob}" step="1" var="i"> --%>
+<!-- 			<tr> -->
+<%-- 				<c:forEach begin="2" end="${empty param.dan ? 9 : param.dan}" var="j" step="1"> --%>
+<%-- 					<td>${j}*${i} = ${j*i}</td> --%>
+<%-- 				</c:forEach> --%>
+<!-- 			</tr> -->
+<%-- 		</c:forEach> --%>
 	</table>
 </body>
 </html>

@@ -73,4 +73,40 @@
 		SELECT	COUNT(*)
 		FROM	LPROD
 	</select>
+	
+	<insert id="insertUser" parameterType="userVO">
+		INSERT INTO USERS 
+        VALUES(	#{userId},
+        		#{name},
+        		#{alias},
+        		#{pass},
+                #{addr1},
+                #{addr2},
+                '',
+                '',
+                #{zipcd},
+                #{birth}
+         )
+	</insert>
+	
+	<!-- 사용자 삭제 -->
+	<delete id="deleteUser" parameterType="String">
+		DELETE 	USERS
+		WHERE	USERID=#{userId}
+	</delete>
+	
+	<!-- 사용자 수정 -->
+	<update id="modiUser" parameterType="userVO">
+		UPDATE 	USERS
+		SET		NAME = #{name},
+        		ALIAS = #{alias},
+        		PASS = #{pass},
+                ADDR1 = #{addr1},
+                ADDR2 = #{addr2},
+<!--                 PATH = #{path}, -->
+<!--                 FILENAME = #{filename}, -->
+                ZIPCD = #{zipcd},
+                BIRTH = #{birth}
+		WHERE	USERID = #{userId}
+	</update>
 </mapper>

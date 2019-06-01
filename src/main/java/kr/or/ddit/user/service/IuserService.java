@@ -35,4 +35,34 @@ public interface IuserService {
 	* Method 설명 : 해당하는 페이지 리스트를 반환하는 메서드
 	*/
 	Map<String, Object> getPaging(PageVO pageVO);
+	
+	/**
+	* Method : insertUser
+	* 작성자 : PC19
+	* 변경이력 :
+	* @param userVO
+	* @return
+	* Method 설명 : 사용자 등록
+	*/
+	int insertUser(UserVO userVO);
+
+	/**
+	* Method : deleteUser
+	* 작성자 : PC19
+	* 변경이력 :
+	* @param string
+	* @return
+	* Method 설명 :사용자 삭제
+	*/
+	int deleteUser(String string);
+	
+	/**
+	* Method : modiUser
+	* 작성자 : PC19
+	* 변경이력 :
+	* @param userVO
+	* @return
+	* Method 설명 : 사용자 수정
+	*/
+	public int modiUser(UserVO userVO);
 }

@@ -1,6 +1,9 @@
 package kr.or.ddit.user.model;
 
-import java.sql.Date;
+import java.util.Date;
+
+
+
 
 public class UserVO {
 	private String name;
@@ -17,6 +20,25 @@ public class UserVO {
 	public UserVO() {
 		
 	}
+	
+	
+
+	public UserVO(String userId, String name, String alias, String pass,
+			String addr1, String addr2, String zipcd, Date birth) {
+		this(name, userId, alias);
+		this.pass = pass;
+		this.addr1 = addr1;
+		this.addr2 = addr2;
+		this.zipcd = zipcd;
+		this.birth = birth;
+	}
+	
+	public UserVO(String name, String userId, String alias) {
+		super();
+		this.name = name;
+		this.userId = userId;
+		this.alias = alias;
+	}
 
 	@Override
 	public String toString() {
@@ -26,7 +48,7 @@ public class UserVO {
 				+ "\nzipcd=" + zipcd + "\nbirth=" + birth + "\n]";
 	}
 	
-	public UserVO(String name, String userId, String alias, String pass,
+	public UserVO(String userId, String name, String alias, String pass,
 			String addr1, String addr2, String path, String filename,
 			String zipcd, Date birth) {
 		super();
