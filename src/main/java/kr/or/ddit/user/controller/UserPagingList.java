@@ -60,6 +60,7 @@ public class UserPagingList extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		logger.debug("userPagingList");
+		doGet(request, response);
 	}
 }

@@ -56,7 +56,6 @@ public class FileUploadServlet extends HttpServlet {
 			//파일 이름 추출하기
 			String fileName = PartUtil.getFileName(contentDisposition);
 			String ext = PartUtil.getExt(fileName);
-			ext = ext.equals("") ? "" : "."+ext;
 			
 			
 			//년도에 해당하는 폴더가 있는지, 년도안에 월에 해당하는 폴더가 있는지 확인 하는 작업

@@ -44,18 +44,18 @@
 		});
 		
 		//개발용 데이터 초기화 함수 ***********추후 지울것
-// 		dataInit();
+		dataInit();
 	})
 	
 	function dataInit(){
-// 		$("#userId").val("userTest");
-// 		$("#name").val("대덕");
-// 		$("#alias").val("빌딩");
-// 		$("#addr1").val("대전광역시 중구 중앙로 76");
-// 		$("#addr2").val("영민빌딩 2층 204호");
-// 		$("#zipcd").val("34940");
-// 		$("#birth").val("2019-05-31");
-// 		$("#pass").val("userTest1234");
+		$("#userId").val("userTest");
+		$("#name").val("대덕");
+		$("#alias").val("빌딩");
+		$("#addr1").val("대전광역시 중구 중앙로 76");
+		$("#addr2").val("영민빌딩 2층 204호");
+		$("#zipcd").val("34940");
+		$("#birth").val("2019-05-31");
+		$("#pass").val("userTest1234");
 		
 	}
 </script>
@@ -74,12 +74,18 @@
 					<div class="col-sm-8 blog-main">
 						<h2 class="sub-header">사용자 등록</h2>
 
-						<form action = "${pageContext.request.contextPath}/userForm" id="frm" class="form-horizontal" role="form" method="post">
+						<form action = "${pageContext.request.contextPath}/userForm"
+							  id="frm" 
+							  class="form-horizontal" 
+							  role="form" 
+							  method="post"
+							  enctype="multipart/form-data">
+							  
 							<div class="form-group">
 								<label for="filename" class="col-sm-2 control-label">사용자 사진</label>
 								<div class="col-sm-10">
-									<input type="file" id="filename"
-									name="filename" placeholder="사용자 아이디">
+									<input type="file" id="profile"
+									name="profile" placeholder="사용자 아이디">
 								</div>
 							</div>
 							

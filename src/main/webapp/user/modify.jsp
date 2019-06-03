@@ -89,14 +89,15 @@
 					<div class="col-sm-8 blog-main">
 						<h2 class="sub-header">사용자 수정</h2>
 
-						<form action = "${pageContext.request.contextPath}/modify" id="frm" class="form-horizontal" role="form" method="post">
+						<form action = "${pageContext.request.contextPath}/modify" id="frm" class="form-horizontal" role="form" method="post"
+							enctype="multipart/form-data">
 							<input id="userId" name="userId" type="hidden"/>
 							<div class="form-group">
 								<label for="filename" class="col-sm-2 control-label">사용자 사진</label>
 								
 								<div class="col-sm-10">
-									<input type="file" id="filename"
-									name="filename" placeholder="사용자 아이디">
+									<input type="file" id="profile"
+									name="profile" placeholder="사용자 아이디">
 								</div>
 							</div>
 							

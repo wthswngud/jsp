@@ -80,12 +80,12 @@
         		#{name},
         		#{alias},
         		#{pass},
-                #{addr1},
-                #{addr2},
-                '',
-                '',
-                #{zipcd},
-                #{birth}
+                #{addr1, jdbcType=VARCHAR},
+                #{addr2, jdbcType=VARCHAR},
+                #{path, jdbcType=VARCHAR},
+                #{filename, jdbcType=VARCHAR},
+                #{zipcd, jdbcType=VARCHAR},
+                #{birth, jdbcType=VARCHAR}
          )
 	</insert>
 	
@@ -98,15 +98,15 @@
 	<!-- 사용자 수정 -->
 	<update id="modiUser" parameterType="userVO">
 		UPDATE 	USERS
-		SET		NAME = #{name},
-        		ALIAS = #{alias},
-        		PASS = #{pass},
-                ADDR1 = #{addr1},
-                ADDR2 = #{addr2},
-<!--                 PATH = #{path}, -->
-<!--                 FILENAME = #{filename}, -->
-                ZIPCD = #{zipcd},
-                BIRTH = #{birth}
+		SET		NAME = #{name, jdbcType=VARCHAR},
+        		ALIAS = #{alias, jdbcType=VARCHAR},
+        		PASS = #{pass, jdbcType=VARCHAR},
+                ADDR1 = #{addr1, jdbcType=VARCHAR},
+                ADDR2 = #{addr2, jdbcType=VARCHAR},
+                PATH = #{path, jdbcType=VARCHAR},
+                FILENAME = #{filename, jdbcType=VARCHAR},
+                ZIPCD = #{zipcd, jdbcType=VARCHAR},
+                BIRTH = #{birth, jdbcType=VARCHAR}
 		WHERE	USERID = #{userId}
 	</update>
 </mapper>

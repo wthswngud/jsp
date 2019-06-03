@@ -23,15 +23,17 @@ public class ProfileController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private IuserService service;
-	private UserVO userVO;
        
 	@Override
 	public void init() throws ServletException {
+		UserVO userVO = new UserVO();
 		service = new UserServiceImpl();
 		userVO = new UserVO();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		UserVO userVO = new UserVO();
+		FileInputStream fis = null;
 		//사용아이디를 파라미터로부터 확인해서
 		String userId = request.getParameter("userId");
 		
@@ -40,13 +42,18 @@ public class ProfileController extends HttpServlet {
 		
 		//path정보로 file을 읽어 들여서
 		ServletOutputStream sos = response.getOutputStream();
-		
-		
-		String path = userVO.getPath();
-		File file = new File(path);
-		FileInputStream fis = new FileInputStream(file);
+		String filePath = null;
+		if(userVO.getPath() != null){
+			filePath = userVO.getPath();
+			//사용자가 업로드한 파일이 존재하지 않을 경우 : no_image.gif
+			return;
+		}else{
+			filePath = getServletContext().getRealPath("/image/no_image.gif");
+			//webapp/img/no_image.gif
+		}
+		File file = new File(filePath);
+		fis = new FileInputStream(file);
 		byte[] buffer = new byte[512];
-		
 		
 		//response객체에 스트림으로 써준다.
 		while(fis.read(buffer, 0, 512)!=-1){
@@ -59,5 +66,4 @@ public class ProfileController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	}
-
 }

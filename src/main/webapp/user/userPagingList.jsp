@@ -18,11 +18,17 @@
 <script>
 	$(document).ready(function(){
 		//사용자 tr 태그 이벤트 등록
+		var msg = '${msg}';
+		if(msg!=''){
+			alert(msg);
+		}
+			
 		$(".userTr").on("click", function(){
 			console.log("userTr click");
 			//userId를 획득하는 방법
 			//$(this).find(".userId").text();
 			//$(this).data("userid");
+			
 			
 			//사용자 아이디를 #userId 값으로 설정해주고
 			var userId = $(this).find(".userId").text();
