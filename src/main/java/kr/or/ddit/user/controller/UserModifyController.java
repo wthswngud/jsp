@@ -115,10 +115,8 @@ public class UserModifyController extends HttpServlet {
 		int result = service.modiUser(userVO);
 		if(result>0){
 			logger.debug("수정 성공");
-//			response.sendRedirect(request.getContextPath()+"/userPagingList");
-			request.removeAttribute("page");
-			request.removeAttribute("pageSize");
-			request.getRequestDispatcher(request.getContextPath()+"/userPagingList").forward(request, response);
+			response.sendRedirect(request.getContextPath()+"/userPagingList");
+//			request.getRequestDispatcher(request.getContextPath()+"/userPagingList").forward(request, response);
 		}else{
 			logger.debug("수정 실패");
 			return;

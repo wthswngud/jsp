@@ -159,8 +159,8 @@
 							<div class="form-group">
 								<label for="birth" class="col-sm-2 control-label">생일</label>
 								<div class="col-sm-10">
-									<input type="date" class="form-control" id="birth"
-									name="birth" placeholder="생일" <fmt:formatDate value="${userVO.birth}" pattern="yyyy-MM-dd" var="date"/>
+									<input type="date" class="form-control" id="birth"name="birth" placeholder="생일"
+									<fmt:formatDate value="${userVO.birth}" pattern="yyyy-MM-dd" var="date"/>
 									value="${date}">
 								</div>
 							</div>
