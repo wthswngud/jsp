@@ -46,10 +46,10 @@ public class ProfileController extends HttpServlet {
 		if(userVO.getPath() != null){
 			filePath = userVO.getPath();
 			//사용자가 업로드한 파일이 존재하지 않을 경우 : no_image.gif
-			return;
+			
 		}else{
 			filePath = getServletContext().getRealPath("/image/no_image.gif");
-			//webapp/img/no_image.gif
+			//webapp/image/no_image.gif
 		}
 		File file = new File(filePath);
 		fis = new FileInputStream(file);

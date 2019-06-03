@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import kr.or.ddit.encrypt.kisa.sha256.KISA_SHA256;
 import kr.or.ddit.user.model.UserVO;
 import kr.or.ddit.user.service.IuserService;
 import kr.or.ddit.user.service.UserServiceImpl;
@@ -88,6 +89,7 @@ public class LoginController extends HttpServlet {
 		//사용자 파라미터 userId, password
 		String userId = request.getParameter("userId");
 		String userPW = request.getParameter("userPW");
+		String encryptPassword = KISA_SHA256.encrypt(userPW);
 		
 		//db에서 해당사용자의 정보조회(service, dao)
 		
@@ -102,7 +104,7 @@ public class LoginController extends HttpServlet {
 		userVO = service.getUser(userId);
 		
 		//일치하면...(로그인 성공) ==> main화면으로 이동
-		if(userVO != null && userVO.getPass().equals(userPW)){
+		if(userVO != null && userVO.getPass().equals(encryptPassword)){
 			logger.debug("userPW : " + userPW);
 			
 			//remember 파라미터가 존재할 경우 userId, rememberme cookie 설정한다.
