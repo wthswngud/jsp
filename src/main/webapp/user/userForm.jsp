@@ -14,10 +14,10 @@
 <script>
 	$(document).ready(function(){
 		var msg = '${msg}';
-		if(msg != '')
+		if(msg != ''){
 			alert(msg);
-		
-		
+			msg = '';
+		}
 		//주소찾기 버튼 이벤트 클릭 이벤트 핸들러
 		$("#search").on("click", function(){
 		    new daum.Postcode({

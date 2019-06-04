@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import kr.or.ddit.encrypt.kisa.sha256.KISA_SHA256;
 import kr.or.ddit.user.model.UserVO;
 import kr.or.ddit.user.service.IuserService;
 import kr.or.ddit.user.service.UserServiceImpl;
@@ -75,7 +76,6 @@ public class UserModifyController extends HttpServlet {
 		
 		logger.debug("userId : " + userId);
 		logger.debug("name : " + name);
-		logger.debug("pass : " + pass);
 		logger.debug("alias : " + alias);
 		logger.debug("addr1 : " + addr1);
 		logger.debug("addr2 : " + addr2);
@@ -84,57 +84,30 @@ public class UserModifyController extends HttpServlet {
 		logger.debug("zipcd : " + zipcd);
 		logger.debug("birth : " + birth);
 		
+		//사용자가 보낸 평문 비밀번호 데이터
+		logger.debug("pass : " + pass);
+		//복호화가 불가능한 암호화
+		pass = KISA_SHA256.encrypt(pass);
+		
+		
 		if(path==null){
 			userVO = service.getUser(userId);
 			path = userVO.getPath();
 			filename = userVO.getFilename();
 		}
 		
-		if(alias == null){
-			alias="";
-		}
-		if(addr1 == null){
-			addr1 = "";
-		}
-		if(addr2 == null){
-			addr2 = "";
-		}
-		if(zipcd == null){
-			zipcd = "";
-		}
 		
-		if(birth == null){
-			birth = "";
-		}
-		
-//		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD");
-		
-		
-//	   SimpleDateFormat recvSimpleFormat = new SimpleDateFormat(
-//	            "E MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
-//
-//	      // 여기에 원하는 포맷을 넣어주면 된다
-//	      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",
-//	            Locale.ENGLISH);
-//
-//	      try {
-//	         Date data = recvSimpleFormat.parse(birth);
-//	         birth = sdf.format(data);
-//	      } catch (ParseException e) {
-//	         e.printStackTrace();
-//	      }
-		
-	      SimpleDateFormat formatter7 = new SimpleDateFormat("yyyy-MM-dd");
-	      Date date7 = null;
+	      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	      Date date = null;
 	      try {
-	    	  if(birth!=""){
-	    		  date7 = formatter7.parse(birth);
+	    	  if(birth==""){
+	    		  date = sdf.parse(birth);
 	    	  }
 	      } catch (ParseException e1) {
 	         e1.printStackTrace();
 	      }
 	      
-	      userVO = new UserVO(userId, name, alias, pass, addr1, addr2, path, filename, zipcd, date7);
+	      userVO = new UserVO(userId, name, alias, pass, addr1, addr2, path, filename, zipcd, date);
 	      
 	      
 	      Part profile = request.getPart("profile");

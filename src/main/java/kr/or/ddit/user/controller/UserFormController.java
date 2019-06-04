@@ -62,29 +62,11 @@ public class UserFormController extends HttpServlet {
 		String birth = request.getParameter("birth");
 		String path = request.getParameter("path");
 		
-		if(path==null){
-			path = "";
-		}
-		if(alias == null){
-			alias="";
-		}
-		if(addr1 == null){
-			addr1 = "";
-		}
-		if(addr2 == null){
-			addr2 = "";
-		}
-		if(zipcd == null){
-			zipcd = "";
-		}
-		if(birth == null){
-			birth = "";
-		}
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-DD");
 		Date date = null;
 	      try {
-	    	  if(birth!=""){
+	    	  if(birth!=""||birth!=null){
 	    		  date = sdf.parse(birth);
 	    	  }
 	      } catch (ParseException e1) {
