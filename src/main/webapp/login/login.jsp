@@ -131,7 +131,7 @@
       <form id = "frm" action = "${pageContext.request.contextPath}/login"
       		class="form-signin"
       		method = "post">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Please sign in ${requestMap}</h2>
         <label for="userId" class="sr-only">userId</label>
         
         <input type="text" id ="userId" name ="userId" class="form-control" placeholder="Email address" required value="${param.userId}">
