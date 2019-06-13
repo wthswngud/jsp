@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebFilter("/RequestCountFilter")
+@WebFilter("/*")
 public class RequestCountFilter implements Filter {
 	private static final Logger logger = LoggerFactory
 			.getLogger(RequestCountFilter.class);
