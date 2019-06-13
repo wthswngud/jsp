@@ -14,7 +14,7 @@
 <fmt:setLocale value="ko"/>
 <!-- 앞에는(패키지명).properties명 -->
 <fmt:bundle basename="kr.or.ddit.msg.msg">
-	<fmt:message key="GREETING"></fmt:message><br>
+	<fmt:message key="GREETING"/><br>
 	<fmt:message key="VISITOR">
 		<fmt:param value="brown"/>
 	</fmt:message>
@@ -23,7 +23,7 @@
 <h2>영어(en)</h2>
 <fmt:setLocale value="en"/>
 <fmt:bundle basename="kr.or.ddit.msg.msg">
-	<fmt:message key="GREETING"></fmt:message><br>
+	<fmt:message key="GREETING"/><br>
 	<fmt:message key="VISITOR">
 		<fmt:param value="brown"/>
 	</fmt:message>
@@ -32,7 +32,7 @@
 <h2>일본어(ja)</h2>
 <fmt:setLocale value="ja"/>
 <fmt:bundle basename="kr.or.ddit.msg.msg">
-	<fmt:message key="GREETING"></fmt:message><br>
+	<fmt:message key="GREETING"/><br>
 	<fmt:message key="VISITOR">
 		<fmt:param value="brown"/>
 	</fmt:message>
