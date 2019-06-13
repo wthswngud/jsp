@@ -32,6 +32,12 @@
 			// 1-1. rememberme가 true이면 input id="rememberme" 체크박스를 체크
 			
 			
+			$("#signinBtn").keypress(function (e) {
+		        if (e.which == 13){
+                   send();  // 실행할 이벤트
+		        }
+		    });
+			
 			
 			$("#signinBtn").on("click", function(){
 				//만약 rememberme 체크박스가 체크되어 있는경우
@@ -138,7 +144,7 @@
             
           </label>
         </div>
-        <button id = "signinBtn" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
+        <button id = "signinBtn" onclick="send()" name="signinBtn" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
       </form>
     </div>
   </body>

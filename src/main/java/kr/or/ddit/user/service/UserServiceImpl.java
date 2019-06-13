@@ -119,10 +119,4 @@ public class UserServiceImpl implements IuserService{
 		
 		return updateCntSum;
 	}
-	
-	public static void main(String[] args) {
-		IuserService service = new UserServiceImpl();
-		int updateCnt = service.encryptPassAllUser();
-		logger.debug("updateCnt : {}" + updateCnt);
-	}
 }
