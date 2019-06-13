@@ -1,3 +1,5 @@
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
 <%@page import="kr.or.ddit.paging.model.PageVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -46,7 +48,6 @@
 		request.setAttribute("code", "03");
 	%>
 	<c:choose>
-		<!-- ==, eq -->
 		<c:when test = "${code=='01'}">code is '01'</c:when>
 		<c:when test = "${code=='02'}">code is '02'</c:when>
 		<c:when test = "${code=='03'}">code is '03'</c:when>
@@ -65,6 +66,26 @@
 	<%-- for(int i=1; i<=10; i++ --%>
 	<c:forEach begin="1" end="10" step="1" var="i">
 		${i}<br>
+	</c:forEach>
+	
+	<h2>foreach map</h2>
+	<%
+		Map<String, String> dataMap = new HashMap<String, String>();
+		//name, age, hp
+		dataMap.put("name", "홍길동");
+		dataMap.put("age", "8");
+		dataMap.put("hp", "010-1111-1111");
+		
+		
+		for(String key : dataMap.keySet()){
+			out.write(dataMap.get(key)+"<br>");
+		}
+		
+		request.setAttribute("dataMap", dataMap);
+	%>
+	<h3>foreach에서 Map객체의 값을 꺼내올수 있다.</h3>
+	<c:forEach items="${dataMap}" var="data">
+		${data.key}	/ ${data.value}<br>
 	</c:forEach>
 </body>
 </html>
