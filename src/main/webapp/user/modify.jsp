@@ -89,7 +89,7 @@
 					<div class="col-sm-8 blog-main">
 						<h2 class="sub-header">사용자 수정</h2>
 
-						<form action = "${pageContext.request.contextPath}/modify" id="frm" class="form-horizontal" role="form" method="post"
+						<form action = "${cp}/modify" id="frm" class="form-horizontal" role="form" method="post"
 							enctype="multipart/form-data">
 							<input id="userId" name="userId" type="hidden"/>
 							<div class="form-group">

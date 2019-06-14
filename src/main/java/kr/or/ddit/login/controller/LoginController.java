@@ -55,6 +55,7 @@ public class LoginController extends HttpServlet {
 	//사용자 로그인 화면 요청 처리
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		logger.debug("LoginController doGet()");
+		logger.debug("parameter UNT_CD : {}" + request.getParameter("UNT_CD"));
 		
 		//login 화면을 처리해줄 누군가?? 에게 위임
 		//단순 login화면을 html로 응답을 생성해주는 작업이 필요
@@ -62,6 +63,11 @@ public class LoginController extends HttpServlet {
 		//										dispatch방식으로 위임
 		
 		//session에 사용자 정보가 있을 경우 --> main 화면으로 이동
+//		if(){
+//			for(){
+//				
+//			}
+//		}
 		
 		//session에 사용자 정보가 없을 경우 --> 기존 로직
 		
@@ -77,7 +83,8 @@ public class LoginController extends HttpServlet {
 
 	//로그인 요청을 처리
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		logger.debug("parameter userId : {}" + request.getParameter("userId"));
+		logger.debug("로그인 처리화면 : doPost");
+		logger.debug("parameter UNT_CD : {}" + request.getParameter("UNT_CD"));
 		logger.debug("parameter userPW : {}" + request.getParameter("userPW"));
 		logger.debug("parameter rememberme: {}", request.getParameter("rememberme"));
 		
@@ -90,6 +97,7 @@ public class LoginController extends HttpServlet {
 		String userId = request.getParameter("userId");
 		String userPW = request.getParameter("userPW");
 		String encryptPassword = KISA_SHA256.encrypt(userPW);
+		logger.debug(encryptPassword);
 		
 		//db에서 해당사용자의 정보조회(service, dao)
 		

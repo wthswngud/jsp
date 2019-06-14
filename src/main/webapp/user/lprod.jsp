@@ -50,7 +50,7 @@
 										<li class=disabled><span>«</span></li>
 									</c:if>
 									<c:if test="${pageVO.getPage()!=1}">
-										<li><a href = "${pageContext.request.contextPath}/userLprodList?page=${pageVO.page-1}&pageSize=${pageVO.pageSize}"><span>«</span></a></li>
+										<li><a href = "${cp}/userLprodList?page=${pageVO.page-1}&pageSize=${pageVO.pageSize}"><span>«</span></a></li>
 									</c:if>
 									
 									
@@ -60,7 +60,7 @@
 												<li class = active><span>${i}</span></li>
 											</c:when>
 											<c:otherwise>
-												<li><a href = "${pageContext.request.contextPath}/userLprodList?page=${i}&pageSize=${pageVO.pageSize}">${i}</a></li>
+												<li><a href = "${cp}/userLprodList?page=${i}&pageSize=${pageVO.pageSize}">${i}</a></li>
 											</c:otherwise>
 										</c:choose>
 									</c:forEach>
@@ -70,7 +70,7 @@
 										<li class=disabled><span>»</span></li>
 									</c:if>
 									<c:if test="${pageVO.page!=pagenation}">
-										<li><a href = "${pageContext.request.contextPath}/userLprodList?page=${pageVO.page+1}&pageSize=${pageVO.pageSize}"><span>»</span></a></li>
+										<li><a href = "${cp}/userLprodList?page=${pageVO.page+1}&pageSize=${pageVO.pageSize}"><span>»</span></a></li>
 									</c:if>
 								</ul>
 							</div>

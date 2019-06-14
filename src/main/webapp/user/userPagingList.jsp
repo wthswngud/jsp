@@ -53,7 +53,7 @@
 						<h2 class="sub-header">사용자 페이징 리스트</h2>
 						
 						<!-- 사용자 상세조회 : userId가 필요 -->
-						<form id="frm" action = "${pageContext.request.contextPath}/user" method="get">
+						<form id="frm" action = "${cp}/user" method="get">
 							<input type="hidden" id="userId" name="userId"/>
 						</form>
 						
@@ -72,7 +72,7 @@
 							</c:forEach>
 						</table>
 
-						<a href="${pageContext.request.contextPath}/userForm" class="btn btn-default pull-right">사용자 등록</a>
+						<a href="${cp}/userForm" class="btn btn-default pull-right">사용자 등록</a>
 
 						<!-- 사용자 수 : 105건
 								 페이지네이션 : 11건 
@@ -89,7 +89,7 @@
 								</c:if>
 								<c:if test="${pageVo.page!=1 }">
 									<li><a
-										href="${pageContext.request.contextPath}/userPagingList?page=${requestScope.pageVo.page-1}&pageSize=${requestScope.pageVo.pageSize}"><span>«</span></a></li>
+										href="${cp}/userPagingList?page=${requestScope.pageVo.page-1}&pageSize=${requestScope.pageVo.pageSize}"><span>«</span></a></li>
 								</c:if>
 
 
@@ -101,7 +101,7 @@
 									</c:if>
 									<c:if test="${pageVo.page!=i}">
 										<li><a
-											href="${pageContext.request.contextPath}/userPagingList?page=${i}&pageSize=${pageVo.pageSize}">${i}</a></li>
+											href="${cp}/userPagingList?page=${i}&pageSize=${pageVo.pageSize}">${i}</a></li>
 									</c:if>
 								</c:forEach>
 
@@ -113,7 +113,7 @@
 									</c:when>
 									<c:otherwise>
 										<li><a
-											href="${pageContext.request.contextPath}/userPagingList?page=${pageVo.page+1}&pageSize=${pageVo.pageSize}"><span>»</span></a></li>
+											href="${cp}/userPagingList?page=${pageVo.page+1}&pageSize=${pageVo.pageSize}"><span>»</span></a></li>
 									</c:otherwise>
 								</c:choose>
 							</ul>

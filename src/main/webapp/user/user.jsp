@@ -35,13 +35,13 @@
 						<h2 class="sub-header">사용자 상세 페이지</h2>
 						
 
-						<form id="frm" action="${pageContext.request.contextPath}/modify" class="form-horizontal" role="form">
+						<form id="frm" action="${cp}/modify" class="form-horizontal" role="form">
 							<input id="userId" name="userId" type="hidden"/>
 							
 							<div class="form-group">
 								<label for="userNm" class="col-sm-2 control-label">프로필 사진</label>
 								<div class="col-sm-10">
-									<img src="${pageContext.request.contextPath}/profile?userId=${userVO.userId}"/>
+									<img src="${cp}/profile?userId=${userVO.userId}"/>
 									<!--<input type="text" class="form-control" id="userId"> -->
 									<!-- name="userId" placeholder="사용자 아이디"> -->
 								</div>

@@ -16,7 +16,7 @@
 
 	<fieldset>
 		<legend>입력</legend>
-		<form action="${pageContext.request.contextPath}/mulCalculation" method = "post">
+		<form action="${cp}/mulCalculation" method = "post">
 			param1 : <input type="text" name = "param1" value = "2">
 			param2 : <input type="text" name = "param2" value = "10">
 			<button>계산</button>

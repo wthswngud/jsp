@@ -74,7 +74,7 @@
 					<div class="col-sm-8 blog-main">
 						<h2 class="sub-header">사용자 등록</h2>
 
-						<form action = "${pageContext.request.contextPath}/userForm"
+						<form action = "${cp}/userForm"
 							  id="frm" 
 							  class="form-horizontal" 
 							  role="form" 

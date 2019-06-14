@@ -73,7 +73,7 @@
 <!-- // 										PageVO pageVo = (PageVO)request.getAttribute("pageVo"); -->
 <!-- // 										int paginationSize = (int)request.getAttribute("paginationSize"); -->
 <%-- 										for(int i=1; i<= paginationSize; i++){%> --%>
-<%-- 											<li><a href="${pageContext.request.contextPath}
+<%-- 											<li><a href="${cp}
 <%-- 										<%} --%>
 <%-- 									%> --%>
 							</ul>

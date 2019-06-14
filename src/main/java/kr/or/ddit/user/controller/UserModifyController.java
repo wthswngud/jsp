@@ -57,14 +57,13 @@ public class UserModifyController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
 		logger.debug("수정화면 doPost");
 		
 		UserVO userVO = new UserVO();
 		
 		String userId = request.getParameter("userId");
 		String name = request.getParameter("name");
-		String pass = request.getParameter("pass");
+//		String pass = request.getParameter("pass");
 		String alias = request.getParameter("alias");
 		String addr1 = request.getParameter("addr1");
 		String addr2 = request.getParameter("addr2");
@@ -85,9 +84,9 @@ public class UserModifyController extends HttpServlet {
 		logger.debug("birth : " + birth);
 		
 		//사용자가 보낸 평문 비밀번호 데이터
-		logger.debug("pass : " + pass);
+//		logger.debug("pass : " + pass);
 		//복호화가 불가능한 암호화
-		pass = KISA_SHA256.encrypt(pass);
+//		pass = KISA_SHA256.encrypt(pass);
 		
 		
 		if(path==null){
@@ -107,7 +106,7 @@ public class UserModifyController extends HttpServlet {
 	         e1.printStackTrace();
 	      }
 	      
-	      userVO = new UserVO(userId, name, alias, pass, addr1, addr2, path, filename, zipcd, date);
+	      userVO = new UserVO(userId, name, alias, userVO.getPass(), addr1, addr2, path, filename, zipcd, date);
 	      
 	      
 	      Part profile = request.getPart("profile");
@@ -154,7 +153,7 @@ public class UserModifyController extends HttpServlet {
 			logger.debug("수정 실패");
 			String msg = "수정이 실패하였습니다.";
 			request.setAttribute("msg", msg);
-			request.getRequestDispatcher("/userPagingList").forward(request, response);
+			request.getRequestDispatcher("/userPagingList").forward(request,response);
 			return;
 		}
 	}

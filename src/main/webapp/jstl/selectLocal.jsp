@@ -24,7 +24,7 @@
 
 <h2>select Locale</h2>
 
-<form id="frm" action="${pageContext.request.contextPath}/selectLocale" method="post">
+<form id="frm" action="${cp}/selectLocale" method="post">
 	<select id="change" name="locale">
 <%-- 		<c:choose> --%>
 <%-- 			<c:when test="${id=='ko'}"><option selected value="ko">한국어</option></c:when> --%>
