@@ -95,5 +95,4 @@
   <listener>
   	<listener-class>kr.or.ddit.listener.ApplicationListener</listener-class>
   </listener>
-  
 </web-app>
