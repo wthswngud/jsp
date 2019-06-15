@@ -81,7 +81,7 @@
   	<filter-class>kr.or.ddit.filter.DefaultParamFilter</filter-class>
   </filter>
   <filter-mapping>
-  	<filter-name>requestParameterEncodingFilter</filter-name>
+  	<filter-name>defaultParamFilter</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
   
@@ -95,5 +95,4 @@
   <listener>
   	<listener-class>kr.or.ddit.listener.ApplicationListener</listener-class>
   </listener>
-  
 </web-app>
