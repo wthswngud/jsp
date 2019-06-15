@@ -15,10 +15,10 @@
 	
 	<h2>request객체의 getParameter, getParameterValues</h2>
 	request.getParameter("userId") : <%=request.getParameter("userId") %><br>
-	request.getParameterValues("userId") : <%String[] userIds = request.getParameterValues("userId");
-											for(String userId : userIds){%>
-												<%=userId %><br>
-											<%}%>
+<%-- 	request.getParameterValues("userId") : <%String[] userIds = request.getParameterValues("userId"); --%>
+<%-- 											for(String userId : userIds){%> --%>
+<%-- 												<%=userId %><br> --%>
+<%-- 											<%}%> --%>
 	request.getParameter("userPW") : <%=request.getParameter("userPW") %>
 	
 	<h2>request객체의 getParameterMap</h2>

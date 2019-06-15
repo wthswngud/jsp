@@ -28,9 +28,9 @@
       		method = "post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="userId" class="sr-only">userId</label>
-        <input type="text" id="userId" class="form-control" placeholder="Email address" required autofocus>
+        <input type="text" id="userId" name="userId" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword" name="userPW" class="form-control" placeholder="Password" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
