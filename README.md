@@ -28,6 +28,8 @@
 <hr/>
     
 :star:[암호화 모듈](https://github.com/wthswngud/jsp/tree/master/src/test/java/kr/or/ddit/encrypt/kisa)  
++ [KISA 암호이용활성화](https://seed.kisa.or.kr/kisa/index.do) 에서 모듈을 참조했습니다.
+
 :star:[네이버 SMART_EDITOR](https://github.com/wthswngud/jsp/tree/master/src/main/webapp/SE2)  
 :star:[request, response](https://github.com/wthswngud/jsp/tree/master/src/main/webapp/jsp)  
 :star:[Filter](https://github.com/wthswngud/jsp/tree/master/src/main/java/kr/or/ddit/filter)  
