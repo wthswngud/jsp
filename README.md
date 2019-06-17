@@ -6,6 +6,7 @@
 
 1. **로그인화면(login.jsp, loginController, userController)**
     - 사용자가 ID/PW 입력시 DB에 있는 ID,PW와 일치하면 main화면으로 이동
+    - 비밀번호는 암호화 모듈을 사용하여 DB에 있는 비밀번호와 일치하는지 확인
     - 일치하지 않으면 login화면으로 이동
     - cookie 사용으로 rememberme 체크박스 체크시 다음 로그인 때 ID를 미리 셋팅
     
@@ -27,3 +28,5 @@
     
     
 :star:[암호화 모듈](https://github.com/wthswngud/jsp/tree/master/src/test/java/kr/or/ddit/encrypt/kisa)
+:star:[네이버 SMART_EDITOR](https://github.com/wthswngud/jsp/tree/master/src/main/webapp/SE2)
+:star:[request, response](https://github.com/wthswngud/jsp/tree/master/src/main/webapp/jsp)
