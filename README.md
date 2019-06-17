@@ -27,19 +27,23 @@
     - 페이지네이션 사용
     - 과제였음
 <hr/>
-    
-**[암호화 모듈]**(https://github.com/wthswngud/jsp/tree/master/src/test/java/kr/or/ddit/encrypt/kisa) 
+
+## 암호화 모듈
+[암호화 모듈](https://github.com/wthswngud/jsp/tree/master/src/test/java/kr/or/ddit/encrypt/kisa) 
 + [KISA 암호이용활성화](https://seed.kisa.or.kr/kisa/index.do) 에서 모듈을 참조했습니다.
 
-**[네이버 SMART_EDITOR]**(https://github.com/wthswngud/jsp/tree/master/src/main/webapp/SE2)  
-+ []()
+## 네이버 SMART_EDITOR
+[네이버 SMART_EDITOR](https://github.com/wthswngud/jsp/tree/master/src/main/webapp/SE2)  
 
-**[request, response]**(https://github.com/wthswngud/jsp/tree/master/src/main/webapp/jsp)  
+## request, response
+[request, response](https://github.com/wthswngud/jsp/tree/master/src/main/webapp/jsp)  
 + request(요청)
 + response(응답)
 
-**[Filter]**(https://github.com/wthswngud/jsp/tree/master/src/main/java/kr/or/ddit/filter)  
+## Filter
+[Filter](https://github.com/wthswngud/jsp/tree/master/src/main/java/kr/or/ddit/filter)  
 + Servlet 가기전에 거르는 곳.
 
-**[Listener]**(https://github.com/wthswngud/jsp/tree/master/src/main/java/kr/or/ddit/listener)  
+## Listener
+[Listener](https://github.com/wthswngud/jsp/tree/master/src/main/java/kr/or/ddit/listener)  
 + Session 객체가 생성되면 실행하는 것.
