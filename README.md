@@ -2,7 +2,7 @@
 ## Servlet, jsp
 ### 전체적인 View는 boostrap을 사용하였음
 
-:star:**게시판**
+**게시판**
 
 1. **로그인화면(login.jsp, loginController, userController)**
     - 사용자가 ID/PW 입력시 DB에 있는 ID,PW와 일치하면 main화면으로 이동
@@ -27,10 +27,15 @@
     - 과제였음
 <hr/>
     
-:star:[암호화 모듈](https://github.com/wthswngud/jsp/tree/master/src/test/java/kr/or/ddit/encrypt/kisa)  
+##[암호화 모듈](https://github.com/wthswngud/jsp/tree/master/src/test/java/kr/or/ddit/encrypt/kisa)  
 + [KISA 암호이용활성화](https://seed.kisa.or.kr/kisa/index.do) 에서 모듈을 참조했습니다.
 
-:star:[네이버 SMART_EDITOR](https://github.com/wthswngud/jsp/tree/master/src/main/webapp/SE2)  
-:star:[request, response](https://github.com/wthswngud/jsp/tree/master/src/main/webapp/jsp)  
-:star:[Filter](https://github.com/wthswngud/jsp/tree/master/src/main/java/kr/or/ddit/filter)  
-:star:[Listener](https://github.com/wthswngud/jsp/tree/master/src/main/java/kr/or/ddit/listener)  
+##[네이버 SMART_EDITOR](https://github.com/wthswngud/jsp/tree/master/src/main/webapp/SE2)  
++ []()
+##[request, response](https://github.com/wthswngud/jsp/tree/master/src/main/webapp/jsp)  
++ request(요청)
++ response(응답)
+##[Filter](https://github.com/wthswngud/jsp/tree/master/src/main/java/kr/or/ddit/filter)  
++ Servlet 가기전에 거르는 곳.
+##[Listener](https://github.com/wthswngud/jsp/tree/master/src/main/java/kr/or/ddit/listener)  
++ Session 객체가 생성되면 실행하는 것.
