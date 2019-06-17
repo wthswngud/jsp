@@ -3,7 +3,7 @@
 
 ## Servlet, jsp
 
-**게시판**
+## 게시판
 
 1. **로그인화면(login.jsp, loginController, userController)**
     - 사용자가 ID/PW 입력시 DB에 있는 ID,PW와 일치하면 main화면으로 이동
