@@ -1,8 +1,6 @@
 # 학원 수업 과정
 ### 전체적인 View는 boostrap을 사용하였음
 
-## Servlet, jsp
-
 ## 게시판
 
 1. **로그인화면(login.jsp, loginController, userController)**
