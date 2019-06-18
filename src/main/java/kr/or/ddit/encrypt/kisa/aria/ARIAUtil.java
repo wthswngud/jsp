@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 전자정부 제공 ARIAUTIL
  * ARIAUtil
  */
