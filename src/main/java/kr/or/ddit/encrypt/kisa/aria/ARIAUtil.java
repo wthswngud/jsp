@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 
+
 public class ARIAUtil {
 
 	public static String ariaEncrypt(String str, String privateKey) 

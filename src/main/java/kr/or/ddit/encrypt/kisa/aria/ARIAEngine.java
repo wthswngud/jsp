@@ -14,6 +14,7 @@ class ARIAEngine {
 		{0x6db14acc, 0x9e21c820, 0xff28b1d5, 0xef5de2b0},
 		{0xdb92371d, 0x2126e970, 0x03249775, 0x04e8c90e}
 	};
+	
 
 	private static final byte[] S1 = new byte[256];
 	private static final byte[] S2 = new byte[256];
