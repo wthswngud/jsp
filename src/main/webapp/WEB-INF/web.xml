@@ -65,27 +65,22 @@
     <filter-name>loggingFilter2</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
-  
   <filter>
-  	<filter-name>requestParameterEncodingFilter</filter-name>
-  	<filter-class>kr.or.ddit.filter.RequestParameterEncodingFilter</filter-class>
+    <filter-name>requestParameterEncodingFilter</filter-name>
+    <filter-class>kr.or.ddit.filter.RequestParameterEncodingFilter</filter-class>
   </filter>
   <filter-mapping>
-  	<filter-name>requestParameterEncodingFilter</filter-name>
-  	<url-pattern>/*</url-pattern>
+    <filter-name>requestParameterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
   <filter>
-  	<filter-name>defaultParamFilter</filter-name>
-  	<filter-class>kr.or.ddit.filter.DefaultParamFilter</filter-class>
+    <filter-name>defaultParamFilter</filter-name>
+    <filter-class>kr.or.ddit.filter.DefaultParamFilter</filter-class>
   </filter>
   <filter-mapping>
-  	<filter-name>defaultParamFilter</filter-name>
-  	<url-pattern>/*</url-pattern>
+    <filter-name>defaultParamFilter</filter-name>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
-  
-  
   <listener>
     <listener-class>kr.or.ddit.listener.SessionListener</listener-class>
   </listener>
@@ -93,6 +88,6 @@
     <listener-class>kr.or.ddit.listener.SessionAttributeListener</listener-class>
   </listener>
   <listener>
-  	<listener-class>kr.or.ddit.listener.ApplicationListener</listener-class>
+    <listener-class>kr.or.ddit.listener.ApplicationListener</listener-class>
   </listener>
 </web-app>
